@@ -1,0 +1,11 @@
+.Mainscreen-scroll {
+    display: flex;
+    flex-direction: column;
+    width: 95svw;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    height: 90vh;
+    overflow-x: hidden;
+    padding-top: 450px;
+}

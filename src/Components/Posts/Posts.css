@@ -1,0 +1,36 @@
+.PostsActivities{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.Posts-Activities-Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Posts{
+    display: block;
+    width: 450px;
+    height:450px;
+    color: black;
+    background: white;
+    margin: 20px;
+  }
+
+.pointer{
+    cursor: pointer;
+    padding: 2px;
+}
+.p{
+    padding: 2px;
+}
+.likes, .share, .comments, .save{
+    display: flex;
+    margin: 5px;
+    margin-right: 5px;
+    padding: 2px;
+    justify-content: center ;
+    align-items: center;
+}
