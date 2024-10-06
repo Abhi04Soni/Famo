@@ -1,10 +1,38 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import { UserContext } from '../../contexts/Context'
 import demoPost from '../../Assets/demoPost.jpg'
+import Posts from '../../Components/Posts/Posts'
+import axios from 'axios'; 
 import './Profile.css'
 
 export default function Profile () {
   const { user } = useContext(UserContext)
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    console.log('calling fetchUserPosts')
+    const fetchUserPosts = async () => {
+      try {
+        const response = await axios.post(
+          'http://localhost:3000/dashboard/profile',
+          {
+            email: user
+          }
+        )
+
+        if (response.data) {
+          console.log(response.data)
+          setPosts(response.data.userPosts)
+        }
+      } catch (error) {
+        console.error('Error fetching user posts:', error)
+      }
+    }
+
+    fetchUserPosts()
+  }, [user])
+
   return (
     <div className='Profile-container'>
       <div className='profile-Dis'>
@@ -13,7 +41,11 @@ export default function Profile () {
           <img src={demoPost} alt='Profile Pitcher' />
         </div>
       </div>
-      <div className='profile-posts'></div>
+      <div className='profile-posts'>
+        {posts.map(post => (
+          <Posts />
+        ))}
+      </div>
     </div>
   )
 }
