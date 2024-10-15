@@ -1,0 +1,33 @@
+.ChatBottom{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 95vw;
+    overflow:hidden;
+
+}
+
+.ChatInput{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.ChatsMainContainer{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 90% 8% ;
+    margin: 10px;
+}
+
+.ChatTop{
+    overflow-y: scroll;
+    height: 80vh;
+    margin-left: 10px;
+    margin-top: 10px;
+}

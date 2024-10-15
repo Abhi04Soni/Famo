@@ -18,7 +18,9 @@ function Navbar () {
       <ul className='Navbar-ul'>
         <li>ImageLogo</li>
         <li>Search</li>
-        <li>Chat</li>
+        <li onClick={() => navigate('/dashboard/Chats', { replace: true })}>
+          Chat
+        </li>
         <li
           onClick={() => {
             navigate('/dashboard/Profile', { replace: true })

@@ -6,9 +6,10 @@ import ErrorPage from './error-page.jsx';
 import Login from '../Store/LoginIn/Login.jsx';
 import { UserContext } from '../contexts/Context.jsx';
 import Profile from '../Store/Profile/Profile.jsx';
+import ChatsMainScreen from '../Store/Chats/ChatsMainScreen.jsx';
 
 export default function Routes() {
-  const { user } = useContext(UserContext); // Access user from context
+  const { user } = useContext(UserContext);
 
   const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ export default function Routes() {
     {
       path: '/dashboard/Profile',
       element: <Profile />,
+    },
+    {
+      path: '/dashboard/Chats',
+      element: <ChatsMainScreen />,
     },
     {
       path: '/signUp',
