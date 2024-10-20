@@ -1,0 +1,28 @@
+.profileConncetion{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.chatConnectionContainer{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+    overflow:hidden;
+    
+}
+
+.connectionProfileSender{
+    font-weight: bold;
+    font-size: 20px;
+}
+.connectionProfileTime{
+    font-size: 10px;
+    text-align: right;
+}
+.connectionProfileRight{
+    padding-left: 40px;
+}

@@ -1,14 +1,14 @@
-import React, { useContext, useState,useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../contexts/Context'
 import demoPost from '../../Assets/demoPost.jpg'
 import Posts from '../../Components/Posts/Posts'
-import axios from 'axios'; 
+import axios from 'axios'
 import './Profile.css'
 
 export default function Profile () {
   const { user } = useContext(UserContext)
 
-  const [posts, setPosts] = useState([])
+  // const [posts, setPosts] = useState([])
 
   useEffect(() => {
     console.log('calling fetchUserPosts')
@@ -38,13 +38,24 @@ export default function Profile () {
       <div className='profile-Dis'>
         <div className='profile-Dis-header'>
           <div className='Profile-Name'>{user}</div>
-          <img src={demoPost} alt='Profile Pitcher' />
+          <div className='profileSecondaryHeader'>
+            <img src={demoPost} alt='Profile Piccher' />
+           
+          </div>
+          <div className='profileBasic'>
+              <div className='prpfileName'>Profile Name Demo</div>
+              <div className='profileBio'>Here is the demo Bio Of the user</div>
+            </div>
+        </div>
+        <div className="profileButtons">
+          <button>Edit Profile</button>
+          <button>Share Profile</button>
         </div>
       </div>
       <div className='profile-posts'>
-        {posts.map(post => (
+        {/* {posts.map(post => (
           <Posts />
-        ))}
+        ))} */}
       </div>
     </div>
   )

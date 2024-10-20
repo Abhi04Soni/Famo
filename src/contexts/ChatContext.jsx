@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react'
-import { UserContext } from './UserContext'
+import { UserContext } from './Context'
 
 export const ChatContext = createContext()
 export const ChatContextProvider = ({ children }) => {

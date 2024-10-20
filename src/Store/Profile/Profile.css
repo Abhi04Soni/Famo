@@ -1,6 +1,9 @@
 .profile-Dis-header img{
-    width: 250px;
+    width: 200px;
     height: 200px;
+    object-fit: cover;
+    padding-left: 100px;
+    border-radius: 50%;
 }
 .Profile-container{
     display: flex;
@@ -13,10 +16,33 @@
 }
 .profile-Dis-header{
     display: flex;
+    flex-direction: column;
 }
 
 .profile-posts{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
+}
+.profileSecondaryHeader{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px;
+}
+.profileBasic{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding: 20px;
+    /* margin-left: 50px;   */
+}
+.profileButtons{
+    display: flex;
+    padding: 20px;
+    margin-left: 50px;
+}
+.profileButtons button{
+    margin: 0 20px;
 }

@@ -5,6 +5,7 @@ import { useState, useContext } from 'react'
 import axios from 'axios'
 import DateTime from '../../Components/DateTime'
 import { UserContext } from '../../contexts/Context'
+import ChatConnections from '../../Components/ChatComponents/ChatConnections'
 
 export default function ChatsMainScreen () {
   const { user } = useContext(UserContext)
@@ -37,27 +38,35 @@ export default function ChatsMainScreen () {
 
   return (
     <div className='ChatsMainContainer'>
-      <div className='ChatTop'>
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
-        <ChatBubble />
+          <div className='chatMainConnections'>
+              <ChatConnections />
+              <ChatConnections />
+              <ChatConnections />
+                  
       </div>
-      <div className='ChatBottom'>
-        <button className='ChatAttachment'>Attach</button>
-        <input
-          type='text'
-          className='ChatInput'
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-        <button className='ChatSend' onClick={() => chatHandler}>
-          Send
-        </button>
+      <div className='chatMainChats'>
+        <div className='ChatTop'>
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+          <ChatBubble />
+        </div>
+        <div className='ChatBottom'>
+          <button className='ChatAttachment'>Attach</button>
+          <input
+            type='text'
+            className='ChatInput'
+            value={text}
+            onChange={e => setText(e.target.value)}
+          />
+          <button className='ChatSend' onClick={() => chatHandler}>
+            Send
+          </button>
+        </div>
       </div>
     </div>
   )
