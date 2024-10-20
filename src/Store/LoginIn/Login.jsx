@@ -8,7 +8,7 @@ export default function Login () {
   const [password, setPassword] = useState('')
   const [logedin, setLogedin] = useState(false)
 
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
 const handleLogin = async (e) => {
   e.preventDefault();

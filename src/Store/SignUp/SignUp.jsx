@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './SignUp.css'
 import axios from 'axios'
+import { UserContext } from '../../contexts/Context'
 
 export default function SignUp () {
   const [email, setEmail] = useState('')
   const [phoneNo, setPhoneNo] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+
+  const { setUser } = useContext(UserContext)
 
   const emailHandler = () => {
     try {
@@ -82,6 +85,7 @@ export default function SignUp () {
         console.log(response.data)
         localStorage.setItem('token', response.data.token)
         console.log('Login successful')
+        setUser(email);
 
         const dashboardResponse = await axios.get(
           'http://localhost:3000/dashboard',
@@ -133,7 +137,7 @@ export default function SignUp () {
         value={confirmPassword}
         onChange={e => setConfirmPassword(e.target.value)}
       />
-      <button>LogIn</button>
+      <button>SignUp</button>
     </form>
   )
 }
