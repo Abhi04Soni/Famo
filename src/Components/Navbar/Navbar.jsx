@@ -3,6 +3,7 @@ import './Navbar.css'
 import { UserContext } from '../../contexts/Context'
 import Profile from '../../Store/Profile/Profile'
 import { useNavigate } from 'react-router-dom'
+import Search from '../SearchComp/Search'
 
 function Navbar () {
   const { user, setUser } = useContext(UserContext)
@@ -16,8 +17,8 @@ function Navbar () {
   return (
     <div className='Navbar'>
       <ul className='Navbar-ul'>
-        <li>ImageLogo</li>
-        <li>Search</li>
+        {/* <li>ImageLogo</li> */}
+        <li><Search  /></li>
         <li onClick={() => navigate('/dashboard/Chats', { replace: true })}>
           Chat
         </li>

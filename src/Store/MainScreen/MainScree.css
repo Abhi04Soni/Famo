@@ -1,11 +1,15 @@
 .Mainscreen-scroll {
     display: flex;
     flex-direction: column;
-    width: 95svw;
+    /* width: 95vw; */
     justify-content: center;
     align-items: center;
     background: blue;
     height: 90vh;
     overflow-x: hidden;
     padding-top: 450px;
+}
+.mainScreenSub{
+    display: grid;
+    grid-template-columns: 25% 75%;
 }
