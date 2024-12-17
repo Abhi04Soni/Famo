@@ -1,25 +1,41 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Search.css'
+import axios from 'axios';
 
 export default function Search() {
 
-  const [searchText, setSearchText] = React.useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
+
+
+    useEffect(() => {
+      const timerId = setTimeout(() => {
+        setDebouncedTerm(searchTerm);
+      }, 300);
+  
+      return () => clearTimeout(timerId);
+    }, [searchTerm]);
+  
+    useEffect(() => {
+      if (debouncedTerm) {
+        const fetchResults = async () => {
+          const response = await axios.get(`/api/search?query=${debouncedTerm}`);
+          const data = await response.json();
+        };
+        fetchResults();
+      }
+    }, [debouncedTerm]);
 
   function searchChangeHandler(e) {
     e.preventDefault();
-    setSearchText(e.target.value);
-    console.log(searchText);
-  }
-
-  function searchFocusHandler(e) {
-    e.preventDefault();
-    
+    setSearchTerm(e.target.value);
+    console.log(searchTerm);
   }
 
 
   return (
       <div className='searchContainer'>
-          <input type="text" name="" className='search' onChange={searchChangeHandler} onFocus={searchFocusHandler}/>
+          <input type="text" name="" className='search' onChange={searchChangeHandler}/>
     </div>
   )
 }

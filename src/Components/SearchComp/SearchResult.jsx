@@ -4,8 +4,6 @@ export default function SearchResult() {
   return (
       <div className='searchResultContainer'>
           <ChatConnections/>
-          
-          
       </div>
   )
 }
