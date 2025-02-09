@@ -20,7 +20,15 @@ export default function Search() {
       if (debouncedTerm) {
         const fetchResults = async () => {
           const response = await axios.get(`/api/search?query=${debouncedTerm}`);
-          const data = await response.json();
+          
+          if (response.status === 200) {
+            const results = response.json();
+            console.log(results);
+
+          } else {
+            console.error('Error fetching search results');
+            
+        }
         };
         fetchResults();
       }
