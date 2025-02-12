@@ -2,9 +2,9 @@
 body {
     background-color: #8B0055;
     font-family: 'Arial', sans-serif;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
     margin: 0;
 }
@@ -19,19 +19,6 @@ body {
     flex-direction: row;
 }
 
-/* Wrapper for Form & Image */
-/* .login-wrapper {
-    display: flex;
-    width: 800px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-} */
-
-/* Left Section - Image */
 .loginPageThumb {
     width: 50%;
     height: 100%;
@@ -63,11 +50,13 @@ body {
 #remember{
     padding: 0;
     margin: 0;
+    width: 20px;
 }
 
 h2 {
     color: white;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 /* Input Fields */
